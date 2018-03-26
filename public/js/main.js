@@ -928,7 +928,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 module.exports = factory;
 
 }).call(this,require('_process'))
-},{"_process":21,"fbjs/lib/emptyObject":10,"fbjs/lib/invariant":15,"fbjs/lib/warning":19,"object-assign":20}],2:[function(require,module,exports){
+},{"_process":20,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":14,"fbjs/lib/warning":18,"object-assign":19}],2:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -958,39 +958,7 @@ module.exports = factory(
   ReactNoopUpdateQueue
 );
 
-},{"./factory":1,"react":29}],3:[function(require,module,exports){
-"use strict";
-
-var tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-?\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-// Thanks to:
-// http://fightingforalostcause.net/misc/2006/compare-email-regex.php
-// http://thedailywtf.com/Articles/Validating_Email_Addresses.aspx
-// http://stackoverflow.com/questions/201323/what-is-the-best-regular-expression-for-validating-email-addresses/201378#201378
-exports.validate = function(email)
-{
-	if (!email)
-		return false;
-		
-	if(email.length>254)
-		return false;
-
-	var valid = tester.test(email);
-	if(!valid)
-		return false;
-
-	// Further checking of some things regex can't handle
-	var parts = email.split("@");
-	if(parts[0].length>64)
-		return false;
-
-	var domainParts = parts[1].split(".");
-	if(domainParts.some(function(part) { return part.length>63; }))
-		return false;
-
-	return true;
-}
-
-},{}],4:[function(require,module,exports){
+},{"./factory":1,"react":28}],3:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1067,7 +1035,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":9,"_process":21}],5:[function(require,module,exports){
+},{"./emptyFunction":8,"_process":20}],4:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1101,7 +1069,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1131,7 +1099,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1169,7 +1137,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":6}],8:[function(require,module,exports){
+},{"./camelize":5}],7:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1207,7 +1175,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":17}],9:[function(require,module,exports){
+},{"./isTextNode":16}],8:[function(require,module,exports){
 "use strict";
 
 /**
@@ -1244,7 +1212,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1264,7 +1232,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":21}],11:[function(require,module,exports){
+},{"_process":20}],10:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1289,7 +1257,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1326,7 +1294,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1357,7 +1325,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1394,7 +1362,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":13}],15:[function(require,module,exports){
+},{"./hyphenate":12}],14:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1450,7 +1418,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":21}],16:[function(require,module,exports){
+},{"_process":20}],15:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1473,7 +1441,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1496,7 +1464,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":16}],18:[function(require,module,exports){
+},{"./isNode":15}],17:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1562,7 +1530,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1627,7 +1595,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":9,"_process":21}],20:[function(require,module,exports){
+},{"./emptyFunction":8,"_process":20}],19:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -1719,7 +1687,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -1905,7 +1873,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1968,7 +1936,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":23,"_process":21,"fbjs/lib/invariant":15,"fbjs/lib/warning":19}],23:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":22,"_process":20,"fbjs/lib/invariant":14,"fbjs/lib/warning":18}],22:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1982,7 +1950,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react-dom.development.js
@@ -17380,7 +17348,7 @@ module.exports = reactDom;
 }
 
 }).call(this,require('_process'))
-},{"_process":21,"fbjs/lib/EventListener":4,"fbjs/lib/ExecutionEnvironment":5,"fbjs/lib/camelizeStyleName":7,"fbjs/lib/containsNode":8,"fbjs/lib/emptyFunction":9,"fbjs/lib/emptyObject":10,"fbjs/lib/focusNode":11,"fbjs/lib/getActiveElement":12,"fbjs/lib/hyphenateStyleName":14,"fbjs/lib/invariant":15,"fbjs/lib/shallowEqual":18,"fbjs/lib/warning":19,"object-assign":20,"prop-types/checkPropTypes":22,"react":29}],25:[function(require,module,exports){
+},{"_process":20,"fbjs/lib/EventListener":3,"fbjs/lib/ExecutionEnvironment":4,"fbjs/lib/camelizeStyleName":6,"fbjs/lib/containsNode":7,"fbjs/lib/emptyFunction":8,"fbjs/lib/emptyObject":9,"fbjs/lib/focusNode":10,"fbjs/lib/getActiveElement":11,"fbjs/lib/hyphenateStyleName":13,"fbjs/lib/invariant":14,"fbjs/lib/shallowEqual":17,"fbjs/lib/warning":18,"object-assign":19,"prop-types/checkPropTypes":21,"react":28}],24:[function(require,module,exports){
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -17611,7 +17579,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"fbjs/lib/EventListener":4,"fbjs/lib/ExecutionEnvironment":5,"fbjs/lib/containsNode":8,"fbjs/lib/emptyFunction":9,"fbjs/lib/emptyObject":10,"fbjs/lib/focusNode":11,"fbjs/lib/getActiveElement":12,"fbjs/lib/shallowEqual":18,"object-assign":20,"react":29}],26:[function(require,module,exports){
+},{"fbjs/lib/EventListener":3,"fbjs/lib/ExecutionEnvironment":4,"fbjs/lib/containsNode":7,"fbjs/lib/emptyFunction":8,"fbjs/lib/emptyObject":9,"fbjs/lib/focusNode":10,"fbjs/lib/getActiveElement":11,"fbjs/lib/shallowEqual":17,"object-assign":19,"react":28}],25:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -17653,7 +17621,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom.development.js":24,"./cjs/react-dom.production.min.js":25,"_process":21}],27:[function(require,module,exports){
+},{"./cjs/react-dom.development.js":23,"./cjs/react-dom.production.min.js":24,"_process":20}],26:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react.development.js
@@ -19014,7 +18982,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":21,"fbjs/lib/emptyFunction":9,"fbjs/lib/emptyObject":10,"fbjs/lib/invariant":15,"fbjs/lib/warning":19,"object-assign":20,"prop-types/checkPropTypes":22}],28:[function(require,module,exports){
+},{"_process":20,"fbjs/lib/emptyFunction":8,"fbjs/lib/emptyObject":9,"fbjs/lib/invariant":14,"fbjs/lib/warning":18,"object-assign":19,"prop-types/checkPropTypes":21}],27:[function(require,module,exports){
 /** @license React v16.2.0
  * react.production.min.js
  *
@@ -19037,7 +19005,7 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
-},{"fbjs/lib/emptyFunction":9,"fbjs/lib/emptyObject":10,"object-assign":20}],29:[function(require,module,exports){
+},{"fbjs/lib/emptyFunction":8,"fbjs/lib/emptyObject":9,"object-assign":19}],28:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -19048,81 +19016,257 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":27,"./cjs/react.production.min.js":28,"_process":21}],30:[function(require,module,exports){
-var React = require('react');
-var createReactClass = require('create-react-class');
-var validator = require("email-validator");
-var Email = createReactClass({
-  displayName: 'Email',
+},{"./cjs/react.development.js":26,"./cjs/react.production.min.js":27,"_process":20}],29:[function(require,module,exports){
+const React = require('react');
+const createReactClass = require('create-react-class');
+
+var NumOne = createReactClass({
+  displayName: 'NumOne',
 
   getInitialState: function () {
     return {
-      valid: true,
-      value: ""
+      value: ''
     };
   },
-  getEmail: function (e) {
+  getNumOne: function (e) {
     var val = e.target.value;
-    if (val != '' && !validator.validate(val)) {
-      this.setState({ valid: false, value: e.target.value });
-    } else {
-      this.setState({ valid: true, value: e.target.value });
-    }
+    this.setState({ value: e.target.value });
   },
-  clearEmail: function () {
-    this.setState({ value: "", valid: true });
+  clear: function () {
+    this.setState({ value: '' });
   },
   render: function () {
-    var formClass = this.state.valid ? "form-group" : "form-group has-error";
-
+    const imptWidth = {
+      width: '95%'
+    };
     return React.createElement(
       'div',
-      { className: formClass },
-      React.createElement('input', { type: 'text', className: 'form-control', onChange: this.getEmail, placeholder: 'Email', value: this.state.value })
+      { className: 'form-group' },
+      React.createElement('input', { type: 'text', className: 'form-control', placeholder: 'NUMBER e.g 1234', onChange: this.getNumOne, value: this.state.value, style: imptWidth })
     );
   }
 });
-module.exports = Email;
 
-},{"create-react-class":2,"email-validator":3,"react":29}],31:[function(require,module,exports){
-var React = require('react');
-var createReactClass = require('create-react-class');
-var Email = require('./Email.jsx');
-var Name = require('./Name.jsx');
-var Form = createReactClass({
-  displayName: 'Form',
+module.exports = NumOne;
 
-  getFormData: function (e) {
-    if (!this.refs.emailFieldRef.state.valid) {
-      alert("Please Enter a proper Email-ID");
-    } else {
-      // Send HTTP Data
-      var httpReqBody = {
-        email: this.refs.emailFieldRef.state.value,
-        name: this.refs.nameFieldRef.state.value
-      };
-      console.log('got the Form Value On Submit--->', httpReqBody);
-      this.refs.emailFieldRef.clearEmail();
-      this.refs.nameFieldRef.clearName();
-    }
+},{"create-react-class":2,"react":28}],30:[function(require,module,exports){
+const React = require('react');
+const createReactClass = require('create-react-class');
+
+var NumTwo = createReactClass({
+  displayName: 'NumTwo',
+
+  getInitialState: function () {
+    return {
+      value: ''
+    };
+  },
+  getNumTwo: function (e) {
+    var val = e.target.value;
+    this.setState({ value: e.target.value });
+  },
+  clear: function () {
+    this.setState({ value: '' });
   },
   render: function () {
+    const imptWidth = {
+      width: '95%'
+    };
     return React.createElement(
       'div',
-      { className: 'col-sm-3' },
+      { className: 'form-group' },
+      React.createElement('input', { type: 'text', className: 'form-control', placeholder: 'NUMBER e.g 4231', onChange: this.getNumTwo, value: this.state.value, style: imptWidth })
+    );
+  }
+});
+
+module.exports = NumTwo;
+
+},{"create-react-class":2,"react":28}],31:[function(require,module,exports){
+var React = require('react');
+var createReactClass = require('create-react-class');
+var NumOne = require('./NumOne.jsx');
+var NumTwo = require('./NumTwo.jsx');
+var calculatorForm = createReactClass({
+  displayName: 'calculatorForm',
+
+  getInitialState: function () {
+    return {
+      finalRes: ''
+    };
+  },
+  getAdd: function (e) {
+    if (this.refs.numOneRef.state.value == "" || this.refs.numTwoRef.state.value == "") {
+      alert('Enter Values');
+    } else {
+      if (isNaN(parseFloat(this.refs.numOneRef.state.value)) || isNaN(parseFloat(this.refs.numTwoRef.state.value))) {
+        this.refs.numOneRef.clear();
+        this.refs.numTwoRef.clear();
+        alert('Please Enter Numnbers');
+      } else {
+        var sum = parseInt(this.refs.numOneRef.state.value) + parseInt(this.refs.numTwoRef.state.value);
+        console.log('the Sum is: ', sum);
+        this.setState({ finalRes: sum });
+      }
+    }
+  },
+  getSubs: function (e) {
+    if (this.refs.numOneRef.state.value == "" || this.refs.numTwoRef.state.value == "") {
+      alert('Enter Values');
+    } else {
+      if (isNaN(parseFloat(this.refs.numOneRef.state.value)) || isNaN(parseFloat(this.refs.numTwoRef.state.value))) {
+        this.refs.numOneRef.clear();
+        this.refs.numTwoRef.clear();
+        alert('Please Enter Numnbers');
+      } else {
+        var sum = parseInt(this.refs.numOneRef.state.value) - parseInt(this.refs.numTwoRef.state.value);
+        console.log('the Subs is: ', sum);
+        this.setState({ finalRes: sum });
+      }
+    }
+  },
+  getMult: function (e) {
+    if (this.refs.numOneRef.state.value == "" || this.refs.numTwoRef.state.value == "") {
+      alert('Enter Values');
+    } else {
+      if (isNaN(parseFloat(this.refs.numOneRef.state.value)) || isNaN(parseFloat(this.refs.numTwoRef.state.value))) {
+        this.refs.numOneRef.clear();
+        this.refs.numTwoRef.clear();
+        alert('Please Enter Numnbers');
+      } else {
+        var sum = parseInt(this.refs.numOneRef.state.value) * parseInt(this.refs.numTwoRef.state.value);
+        console.log('the Mul is: ', sum);
+        this.setState({ finalRes: sum });
+      }
+    }
+  },
+  getDev: function (e) {
+    if (this.refs.numOneRef.state.value == "" || this.refs.numTwoRef.state.value == "") {
+      alert('Enter Values');
+    } else {
+      if (isNaN(parseFloat(this.refs.numOneRef.state.value)) || isNaN(parseFloat(this.refs.numTwoRef.state.value))) {
+        this.refs.numOneRef.clear();
+        this.refs.numTwoRef.clear();
+        alert('Please Enter Numnbers');
+      } else {
+        var sum = parseInt(this.refs.numOneRef.state.value) / parseInt(this.refs.numTwoRef.state.value);
+        console.log('the Dev is: ', sum);
+        this.setState({ finalRes: sum });
+      }
+    }
+  },
+  clearState: function () {
+    this.setState({ finalRes: '' });
+    this.refs.numOneRef.clear();
+    this.refs.numTwoRef.clear();
+  },
+  render: function () {
+    const headingStyle = {
+      textAlign: 'center',
+      fontSize: '26px',
+      fontWeight: 'bolder'
+    };
+    const bckColor = {
+      backgroundColor: '#bfbfbf'
+    };
+    const btnPadding = {
+      paddingRight: '8px',
+      paddingLeft: '8px'
+    };
+    const btnWidth = {
+      width: '90%'
+    };
+    return React.createElement(
+      'div',
+      null,
       React.createElement(
         'div',
-        { className: 'panel panel-default' },
+        { className: 'panel panel-default', style: bckColor },
+        React.createElement(
+          'h3',
+          { style: headingStyle },
+          'Simple calculator'
+        ),
         React.createElement(
           'div',
           { className: 'panel-body' },
-          React.createElement(Name, { nameType: 'First', ref: 'nameFieldRef' }),
-          React.createElement('br', null),
-          React.createElement(Email, { ref: 'emailFieldRef' }),
           React.createElement(
-            'button',
-            { className: 'btn btn-primary', onClick: this.getFormData },
-            'Submit'
+            'div',
+            { className: 'row' },
+            React.createElement(
+              'div',
+              { className: 'col-sm-6 col-lg-6' },
+              React.createElement(NumOne, { ref: 'numOneRef' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-6 col-lg-6' },
+              React.createElement(NumTwo, { ref: 'numTwoRef' })
+            )
+          ),
+          React.createElement('br', null),
+          React.createElement(
+            'div',
+            { className: 'row' },
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-lg-3' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-primary', onClick: this.getAdd, style: btnWidth },
+                ' + Add '
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-lg-3' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-primary', onClick: this.getDev, style: btnWidth },
+                '/ Divide '
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-lg-3' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-primary', onClick: this.getSubs, style: btnWidth },
+                '- Subtract '
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-lg-3' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-primary', onClick: this.getMult, style: btnWidth },
+                '* Multiply '
+              )
+            )
+          ),
+          React.createElement('br', null),
+          React.createElement(
+            'div',
+            { className: 'row' },
+            React.createElement(
+              'div',
+              { className: 'col-sm-9 col-lg-9' },
+              React.createElement(
+                'div',
+                { className: 'form-group' },
+                React.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Result', disabled: true, value: this.state.finalRes })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-sm-3 col-lg-3' },
+              React.createElement(
+                'button',
+                { className: 'btn btn-danger', onClick: this.clearState, style: btnWidth },
+                'Clear '
+              )
+            )
           )
         )
       )
@@ -19130,42 +19274,12 @@ var Form = createReactClass({
   }
 });
 
-module.exports = Form;
+module.exports = calculatorForm;
 
-},{"./Email.jsx":30,"./Name.jsx":32,"create-react-class":2,"react":29}],32:[function(require,module,exports){
-const React = require('react');
-const createReactClass = require('create-react-class');
-
-var Name = createReactClass({
-  displayName: 'Name',
-
-  getInitialState: function () {
-    return {
-      value: ""
-    };
-  },
-  getName: function (e) {
-    this.setState({ value: e.target.value });
-  },
-  clearName: function () {
-    this.setState({ value: "" });
-  },
-  render: function () {
-    return React.createElement(
-      'div',
-      null,
-      React.createElement('input', { type: 'text', className: 'form-control', placeholder: this.props.nameType + " Name", onChange: this.getName, value: this.state.value })
-    );
-  }
-});
-module.exports = Name;
-
-},{"create-react-class":2,"react":29}],33:[function(require,module,exports){
+},{"./NumOne.jsx":29,"./NumTwo.jsx":30,"create-react-class":2,"react":28}],32:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Form = require('./components/Form.jsx');
-ReactDOM.render(React.createElement(Form, null), document.getElementById('form'));
-ReactDOM.render(React.createElement(Form, null), document.getElementById('form1'));
-ReactDOM.render(React.createElement(Form, null), document.getElementById('form2'));
+var Calci = require('./components/calculatorForm.jsx');
+ReactDOM.render(React.createElement(Calci, null), document.getElementById('calculatorForm'));
 
-},{"./components/Form.jsx":31,"react":29,"react-dom":26}]},{},[33]);
+},{"./components/calculatorForm.jsx":31,"react":28,"react-dom":25}]},{},[32]);
